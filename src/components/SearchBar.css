@@ -1,0 +1,132 @@
+/* Container for the entire search bar and toggle */
+.search-bar-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0f172a;
+  padding: 10px;
+  border-radius: 50px;
+  max-width: 700px;
+  width: 100%;
+  margin: 20px auto;
+  gap: 16px;
+  position: relative;
+}
+
+/* The input and search icon container */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 10px 16px;
+  border-radius: 999px;
+  flex: 1;
+  position: relative;
+}
+
+/* Search icon styling */
+.search-icon {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Input field */
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  flex: 1;
+  font-size: 1rem;
+}
+
+/* Toggle switch wrapper */
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.toggle-label {
+  font-size: 14px;
+  color: gray;
+  transition: color 0.3s ease;
+}
+
+.toggle-label.active {
+  color: white;
+  font-weight: bold;
+}
+
+.switch {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.switch.fahrenheit .slider {
+  transform: translateX(20px);
+}
+
+/* Dropdown list */
+.dropdown {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px; /* already helps a bit */
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #334155;
+  border-radius: 12px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  top: calc(100% + 8px); /* 🔥 pushes dropdown 8px below the search bar */
+}
+
+/* Dropdown list items */
+.dropdown li {
+  padding: 12px;
+  cursor: pointer;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+/* Rounded corners for first and last item */
+.dropdown li:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.dropdown li:last-child {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom: none;
+}
+
+/* Hover effect */
+.dropdown li:hover {
+  background-color: #475569; /* slate color on hover */
+}
